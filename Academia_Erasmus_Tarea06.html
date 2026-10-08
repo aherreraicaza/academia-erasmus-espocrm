@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Academia Erasmus+ · Tarea 06</title>
+<style>
+  @page { size: 1280px 720px; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: #e8edf3; color: #182633; font-family: Arial, Helvetica, sans-serif; }
+  .slide { width: 1280px; height: 720px; padding: 48px 70px 43px; background: #fff; position: relative; page-break-after: always; overflow: hidden; }
+  .slide:last-child { page-break-after: auto; }
+  .top { display: flex; justify-content: space-between; border-bottom: 2px solid #cbd5df; padding-bottom: 13px; color: #526578; text-transform: uppercase; letter-spacing: .12em; font-size: 13px; font-weight: 700; }
+  h1 { font-size: 43px; line-height: 1.08; margin: 43px 0 17px; letter-spacing: -.03em; }
+  .sub { font-size: 22px; color: #536476; line-height: 1.35; margin: 0 0 27px; }
+  .eyebrow { color: #087b9b; font-size: 14px; text-transform: uppercase; letter-spacing: .14em; font-weight: 800; }
+  .footer { position: absolute; left: 70px; right: 70px; bottom: 24px; border-top: 2px solid #cbd5df; padding-top: 12px; display: flex; justify-content: space-between; color: #526578; font-size: 13px; font-weight: 700; letter-spacing: .08em; }
+  .accent { color: #087b9b; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+  .card { background: #f1f5f8; border-left: 6px solid #48a9c5; padding: 22px 26px; border-radius: 0 8px 8px 0; }
+  .card h3 { font-size: 16px; text-transform: uppercase; margin: 0 0 13px; letter-spacing: .05em; }
+  .card p, .card li { font-size: 21px; line-height: 1.38; margin: 0; }
+  .card p + p { margin-top: 14px; }
+  .hero { font-size: 24px; line-height: 1.42; max-width: 900px; }
+  .three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .three .card { min-height: 215px; }
+  .number { font-size: 32px; font-weight: 800; color: #087b9b; margin-bottom: 14px; }
+  .note { background: #e9f4f7; padding: 17px 23px; border-radius: 6px; font-size: 19px; line-height: 1.4; }
+  ul.clean { padding-left: 25px; margin: 0; }
+  ul.clean li { margin: 0 0 19px; font-size: 21px; line-height: 1.35; }
+  .muted { color: #687987; }
+  .small { font-size: 15px; line-height: 1.36; }
+  table { border-collapse: collapse; width: 100%; table-layout: fixed; }
+  th { background: #193b50; color: white; font-size: 18px; text-align: left; padding: 13px 12px; }
+  td { font-size: 16px; line-height: 1.25; padding: 12px; vertical-align: top; border-bottom: 1px solid #d3dee6; }
+  tbody tr:nth-child(odd) td { background: #f1f5f8; }
+  td:first-child { font-weight: 700; color: #314a5a; }
+  a { color: #087b9b; text-decoration: none; }
+  .source { font-size: 12px; line-height: 1.42; overflow-wrap: anywhere; }
+  .compare h1 { margin: 27px 0 10px; font-size: 39px; }
+  .compare .sub { font-size: 17px; margin-bottom: 16px; }
+  .compare td { font-size: 15px; padding: 9px 10px; }
+  .compare th { font-size: 17px; padding: 10px; }
+  .compare .source { font-size: 12px; }
+  .callout { border-left: 5px solid #eab75a; background: #fff7e8; padding: 13px 18px; font-size: 17px; line-height: 1.35; }
+  .timeline { display: grid; gap: 12px; }
+  .step { display: grid; grid-template-columns: 52px 380px 1fr; align-items: center; gap: 14px; padding: 14px 17px; background: #f1f5f8; border-radius: 5px; font-size: 19px; }
+  .step strong { color: #087b9b; font-size: 26px; }
+  .slots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 19px 0; }
+  .slot { height: 208px; border: 2px dashed #91aec1; background: #f4f7f9; display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px; font-size: 18px; color: #587083; line-height: 1.35; }
+  .status { display: inline-block; padding: 5px 10px; border-radius: 5px; background: #fff0d4; color: #855600; font-weight: 700; font-size: 16px; }
+  .conclusions { display: grid; gap: 13px; }
+  .conclusions .card { padding: 17px 20px; }
+  .conclusions .card p { font-size: 19px; }
+  .ai { margin-top: 16px; color: #6c7b86; font-size: 13px; }
+  @media screen { .slide { margin: 25px auto; box-shadow: 0 10px 35px #a8b6c3; } }
+  @media print { html, body { background: white; } .slide { margin: 0; box-shadow: none; } }
+  /* Dirección visual: editorial minimalista, marfil / verde bosque / salvia. */
+  html, body { background: #e2e4dd; color: #17352f; font-family: 'Noto Sans', Arial, sans-serif; }
+  .slide { background: #faf9f5; padding: 44px 76px 43px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .top { border-bottom: 1px solid #a9b8ad; color: #45665a; letter-spacing: .15em; font-size: 12px; padding-bottom: 17px; }
+  h1 { font-family: 'Noto Serif Display', Georgia, serif; font-weight: 500; font-size: 50px; line-height: 1.13; letter-spacing: -.045em; margin: 39px 0 16px; }
+  .sub { color: #62776d; font-size: 21px; }
+  .eyebrow, .accent { color: #79ad92; }
+  .footer { left: 76px; right: 76px; border-top: 1px solid #a9b8ad; color: #45665a; font-size: 11px; font-weight: 600; letter-spacing: .14em; }
+  .card { background: transparent; border-left: 0; border-top: 2px solid #84aa8e; border-radius: 0; padding: 18px 4px 15px; }
+  .card h3 { color: #567563; font-size: 13px; letter-spacing: .15em; margin-bottom: 15px; }
+  .card p { font-size: 20px; }
+  .grid2 { gap: 50px; }
+  .three { gap: 31px; }
+  .three .card { min-height: 216px; }
+  .number { color: #2f7860; font-family: 'Noto Serif Display', Georgia, serif; font-size: 39px; font-weight: 500; margin: 0 0 17px; }
+  .note { background: #e5eee5; border-left: 4px solid #4a9070; border-radius: 0; color: #244b3e; }
+  .muted { color: #74887b; }
+  .small { color: #6f8378; }
+  .callout { background: #e5eee5; border-left-color: #427f61; }
+  .status { background: #e5eee5; color: #426b52; }
+  a { color: #237455; text-decoration: underline; text-decoration-color: #9abfa5; text-underline-offset: 2px; }
+  /* Portada: composición editorial de alto contraste, sin depender de imágenes externas. */
+  .slide:first-of-type { background: #183d34; color: #f8f8ef; }
+  .slide:first-of-type::before { content: ''; position: absolute; width: 570px; height: 570px; border: 1px solid #769d82; border-radius: 50%; right: -168px; top: 56px; opacity: .48; }
+  .slide:first-of-type::after { content: ''; position: absolute; width: 385px; height: 385px; border: 65px solid #5c9577; border-radius: 50%; right: -145px; top: 154px; opacity: .28; }
+  .slide:first-of-type .top { border-color: #779b83; color: #c2d5c5; }
+  .slide:first-of-type .eyebrow { color: #c4ddba; position: relative; z-index: 1; }
+  .slide:first-of-type h1 { font-family: 'Noto Serif Display', Georgia, serif; font-size: 76px !important; max-width: 900px; position: relative; z-index: 1; }
+  .slide:first-of-type .sub { color: #e1eade; position: relative; z-index: 1; }
+  .slide:first-of-type .accent { color: #b9d99d; }
+  .slide:first-of-type .grid2 { margin-top: 46px !important; position: relative; z-index: 1; max-width: 980px; }
+  .slide:first-of-type .card { border-color: #8db595; }
+  .slide:first-of-type .card h3 { color: #b5d3b6; }
+  .slide:first-of-type .card p { font-size: 18px; color: #edf3e9; }
+  .slide:first-of-type .card .muted { color: #b8cbbb; }
+  .slide:first-of-type .footer { border-color: #779b83; color: #c2d5c5; }
+  /* Las páginas de contenido alternan espacios amplios, tablas nítidas y líneas finas. */
+  .slide:nth-of-type(2) .hero { border-left: 3px solid #76a887; padding-left: 22px; font-size: 23px; }
+  .slide:nth-of-type(2) .three { margin-top: 43px; }
+  .slide:nth-of-type(2) .three .card { border-top: 1px solid #89a593; }
+  .slide:nth-of-type(3) .grid2 { gap: 40px; margin-top: 35px !important; }
+  .slide:nth-of-type(3) .grid2 .card { background: #f1f3ed; padding: 27px 29px; border-top: 2px solid #4b8666; }
+  .slide:nth-of-type(3) .grid2 .card:last-child { background: #e7eee5; }
+  .slide:nth-of-type(3) .card p + p { border-top: 1px solid #c8d5ca; margin-top: 18px; padding-top: 18px; }
+  .slide.compare { background: #fffefa; }
+  .compare h1 { font-size: 43px; margin: 24px 0 7px; }
+  .compare th { background: #214c3d; font-size: 16px; font-weight: 600; }
+  .compare td { border-bottom: 1px solid #d8e0d6; padding: 8px 10px; font-size: 14px; }
+  .compare tbody tr:nth-child(odd) td { background: #f1f4ec; }
+  .compare td:first-child { color: #275340; }
+  .compare .source { font-size: 11px; }
+  .slide:nth-of-type(5) { background: #eaf0e7; }
+  .slide:nth-of-type(5) .three .card { border-top: 3px solid #346d50; }
+  .slide:nth-of-type(5) .note { background: #f8faf5; }
+  .timeline { gap: 4px; }
+  .step { border-radius: 0; background: transparent; border-top: 1px solid #c7d6c9; padding: 17px 6px; grid-template-columns: 65px 390px 1fr; font-size: 18px; }
+  .step:last-child { border-bottom: 1px solid #c7d6c9; }
+  .step strong { width: 43px; height: 43px; border-radius: 50%; background: #275b45; color: #f7f9ee; font-family: 'Noto Serif Display', Georgia, serif; font-size: 23px; font-weight: 500; text-align: center; line-height: 40px; }
+  .slot { background: #eff3eb; border: 1px dashed #7d9d84; color: #587466; }
+  .slide:nth-of-type(7) .grid2 .card { background: #e9efe6; padding: 17px 20px; border-top: 2px solid #4e8060; }
+  .slide:nth-of-type(7) .grid2 .card p { font-size: 17px; }
+  .conclusions { gap: 0; }
+  .conclusions .card { border-top: 1px solid #a5bba7; padding: 18px 8px; }
+  .conclusions .card:last-child { border-bottom: 1px solid #a5bba7; }
+  .conclusions .card p { font-size: 19px; }
+  .ai { color: #72847a; }
+  /* Segunda pasada: ritmo visual, navegación discreta y contraste intencional. */
+  .slide:not(:first-of-type)::before { content: ''; position: absolute; width: 6px; height: 100%; left: 0; top: 0; background: #d2dfd1; }
+  .slide:not(:first-of-type)::after { content: ''; position: absolute; width: 6px; height: 150px; left: 0; top: 0; background: #317357; }
+  .slide:nth-of-type(3)::after { height: 230px; }
+  .slide:nth-of-type(4)::after { height: 305px; }
+  .slide:nth-of-type(5)::after { height: 380px; }
+  .slide:nth-of-type(6)::after { height: 455px; }
+  .slide:nth-of-type(7)::after { height: 535px; }
+  .slide:nth-of-type(8)::after { height: 100%; }
+  .top span:last-child { color: #236a4e; }
+  h1::first-letter { color: #276449; }
+  .slide:nth-of-type(2) .three .card { position: relative; padding-top: 26px; }
+  .slide:nth-of-type(2) .three .card::after { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #2f7860; position: absolute; top: -5px; left: 0; }
+  .slide:nth-of-type(3) .grid2 .card { box-shadow: 8px 8px 0 #e0e9dc; }
+  .slide:nth-of-type(3) .grid2 .card:last-child { box-shadow: 8px 8px 0 #d3e1d1; }
+  .compare th:nth-child(2) { background: #347052; }
+  .compare td:nth-child(2) { border-left: 2px solid #7da98c; border-right: 2px solid #7da98c; }
+  .compare tbody tr:last-child td:nth-child(2) { border-bottom: 2px solid #7da98c; }
+  .slide:nth-of-type(5) .three { gap: 14px; }
+  .slide:nth-of-type(5) .three .card { background: #fbfcf7; padding: 25px 22px 30px; min-height: 260px; position: relative; }
+  .slide:nth-of-type(5) .three .card .number { font-size: 32px; }
+  .slide:nth-of-type(5) .three .card:not(:last-child)::after { content: '→'; position: absolute; right: -20px; top: 97px; z-index: 2; font-size: 27px; font-family: 'Noto Sans', sans-serif; color: #317357; width: 33px; height: 33px; border-radius: 50%; background: #eaf0e7; text-align: center; line-height: 30px; }
+  .slide:nth-of-type(5) .note { border-left: 0; border-top: 1px solid #9bbca2; padding: 20px 4px 0; background: transparent; }
+  .slide:nth-of-type(6) .timeline { position: relative; }
+  .slide:nth-of-type(6) .timeline::before { content: ''; position: absolute; width: 1px; height: calc(100% - 45px); left: 27px; top: 24px; background: #6c9d77; z-index: 0; }
+  .slide:nth-of-type(6) .step strong { position: relative; z-index: 1; }
+  .slot { position: relative; }
+  .slot::before { content: '+'; position: absolute; top: 8px; right: 13px; font-size: 17px; color: #87a38c; }
+  .slide:nth-of-type(8) .callout { background: #214a3a; color: #fffdf4; padding: 17px 22px; border: 0; }
+  .shots { display: grid; grid-template-columns: 1fr 1.25fr 1fr; gap: 14px; margin: 18px 0 22px; }
+  .shots figure { margin: 0; min-width: 0; }
+  .shots img { display: block; width: 100%; height: 195px; object-fit: cover; object-position: top left; border: 1px solid #b9cbbd; background: #f2f4ef; }
+  .shots figcaption { font-size: 14px; font-weight: 700; color: #365843; padding-top: 8px; }
+</style>
+</head>
+<body>
+<section class="slide">
+  <div class="top"><span>Tarea 06 · propuesta de solución</span><span>01 / empresa</span></div>
+  <p class="eyebrow" style="margin-top:82px">Escenario elegido · academia de idiomas</p>
+  <h1 style="font-size:65px;margin:12px 0 15px">Academia Erasmus+</h1>
+  <p class="sub" style="font-size:27px">Un único seguimiento de consultas con <strong class="accent">EspoCRM</strong></p>
+  <div class="grid2" style="margin-top:59px">
+    <div class="card"><h3>La empresa</h3><p>Cuatro profesores. Reciben consultas por web, Instagram y teléfono y pierden el rastro antes de la matrícula.</p></div>
+    <div class="card"><h3>Integrantes</h3><p>[Escribe aquí nombre y apellidos]</p><p class="muted">Exposición: [fecha]</p></div>
+  </div>
+  <div class="footer"><span>Sistemas de gestión empresarial · DAM 2</span><span>01</span></div>
+</section>
+
+<section class="slide">
+  <div class="top"><span>Academia Erasmus+ · EspoCRM</span><span>02 / objetivos</span></div>
+  <h1>Qué queremos conseguir</h1>
+  <p class="hero" style="margin:0 0 34px"><strong>Objetivo general:</strong> centralizar las consultas y su evolución hasta la matrícula para conocer cuántas personas pasan de interesadas a alumnas.</p>
+  <div class="three">
+    <div class="card"><div class="number">01</div><p><strong>Registrar</strong> el 100 % de las nuevas consultas con su canal de origen para evitar que queden dispersas.</p></div>
+    <div class="card"><div class="number">02</div><p><strong>Actualizar</strong> el estado y la próxima llamada de cada interesado para revisar los casos pendientes a los 14 días.</p></div>
+    <div class="card"><div class="number">03</div><p><strong>Contar</strong> consultas y matrículas por periodo para calcular la tasa de conversión.</p></div>
+  </div>
+  <div class="footer"><span>Sistemas de gestión empresarial · DAM 2</span><span>02</span></div>
+</section>
+
+<section class="slide">
+  <div class="top"><span>Academia Erasmus+ · EspoCRM</span><span>03 / necesidades</span></div>
+  <h1>Qué le pasa a la academia</h1>
+  <div class="grid2" style="margin-top:38px">
+    <div class="card" style="min-height:360px"><h3>Problemas</h3><p>Las consultas de web, Instagram y teléfono quedan separadas.</p><p>No saben cuántas personas preguntaron ni cuántas se matricularon.</p><p>Si alguien no se matricula en dos semanas, nadie retoma el contacto.</p></div>
+    <div class="card" style="min-height:360px"><h3>Requisitos</h3><p>Una ficha de interesado con nombre, canal y fecha.</p><p>Un estado visible: nuevo, contactado, matriculado o descartado; tareas de seguimiento.</p><p>Listado exportable por fecha y estado para calcular consultas, matrículas y conversión.</p></div>
+  </div>
+  <p class="small muted" style="margin-top:19px">El escenario no exige automatizar Instagram: se registrarán manualmente las consultas que lleguen por ese canal.</p>
+  <div class="footer"><span>Sistemas de gestión empresarial · DAM 2</span><span>03</span></div>
+</section>
+
+<section class="slide compare">
+  <div class="top"><span>Academia Erasmus+ · EspoCRM</span><span>04 / comparativa</span></div>
+  <h1>Tres sistemas, una necesidad</h1>
+  <p class="sub">Comparación para cuatro usuarios. [E], [S] y [O] remiten a enlaces oficiales de la última fila.</p>
+  <table>
+    <colgroup><col style="width:14%"><col style="width:28.7%"><col style="width:28.7%"><col style="width:28.6%"></colgroup>
+    <thead><tr><th>Fila</th><th>EspoCRM · elegido</th><th>SuiteCRM 7</th><th>Odoo Community</th></tr></thead>
+    <tbody>
+      <tr><td>Tipo</td><td>CRM [E1]</td><td>CRM [S1]</td><td>ERP modular con CRM [O1]</td></tr>
+      <tr><td>Licencia</td><td>AGPLv3: usar, modificar y redistribuir con condiciones de publicación del código [E1]</td><td>AGPLv3: usar, modificar y redistribuir con condiciones [S1]</td><td>LGPLv3: usar, modificar y redistribuir bajo sus condiciones [O1]</td></tr>
+      <tr><td>Coste / año</td><td>4 usuarios: 0 € licencia; alojamiento y mantenimiento: sin datos [E1]</td><td>4 usuarios: 0 € licencia; alojamiento y mantenimiento: sin datos [S1]</td><td>4 usuarios: 0 € licencia Community; alojamiento y mantenimiento: sin datos [O1]</td></tr>
+      <tr><td>Alojamiento</td><td>Servidor propio; nube del fabricante opcional [E1]</td><td>Propio o gestionado [S1]</td><td>Community en infraestructura propia [O1]</td></tr>
+      <tr><td>Requisitos</td><td>Linux con Docker; PHP 8.3–8.5 y MariaDB 10.6+ en la pila [E1,E2]</td><td>Linux o Windows; PHP 8.1–8.4 y MySQL/MariaDB [S1]</td><td>Linux; Python y PostgreSQL [O2]</td></tr>
+      <tr><td>Funcionalidad</td><td>Leads, tareas y CSV; informes y workflows avanzados requieren extensión [E2]</td><td>Leads, actividades e informes; más módulos que aprender [S2]</td><td>Leads, actividades y análisis; ERP más amplio que lo necesario [O1,O3]</td></tr>
+      <tr><td>Fuente</td><td class="source"><a href="https://www.espocrm.com/download/">[E1] espocrm.com/download</a><br><a href="https://www.espocrm.com/features/">[E2] espocrm.com/features</a><br><a href="https://hub.docker.com/_/espocrm">Imagen: hub.docker.com/_/espocrm</a></td><td class="source"><a href="https://github.com/SuiteCRM/SuiteCRM">[S1] github.com/SuiteCRM/SuiteCRM</a><br><a href="https://suitecrm.com/what-is-suitecrm/">[S2] suitecrm.com/what-is-suitecrm</a></td><td class="source"><a href="https://github.com/odoo/odoo">[O1] github.com/odoo/odoo</a><br><a href="https://www.odoo.com/documentation/19.0/administration/install/source.html">[O2] odoo.com/.../install/source</a><br><a href="https://www.odoo.com/documentation/19.0/applications/sales/crm.html">[O3] odoo.com/.../sales/crm</a></td></tr>
+    </tbody>
+  </table>
+  <div class="footer"><span>Sistemas de gestión empresarial · DAM 2</span><span>04</span></div>
+</section>
+
+<section class="slide">
+  <div class="top"><span>Academia Erasmus+ · EspoCRM</span><span>05 / elección</span></div>
+  <h1>Por qué EspoCRM</h1>
+  <div class="three" style="margin-top:45px">
+    <div class="card"><div class="number">01 · Reunir</div><p>Los <strong>leads</strong> permiten guardar en un sitio cada consulta y etiquetar el canal de entrada.</p></div>
+    <div class="card"><div class="number">02 · Seguir</div><p>Estado, responsable y <strong>tareas</strong> ayudan a revisar a quien lleva 14 días sin matricularse.</p></div>
+    <div class="card"><div class="number">03 · Medir</div><p>La <strong>exportación CSV</strong> permite contar interesados y matrículas por fecha. El informe se calcula fuera del CRM.</p></div>
+  </div>
+  <p class="note" style="margin-top:32px">Para esta prueba, un CRM ligero y gratuito para cuatro usuarios evita implantar un ERP completo. El seguimiento se plantea manual: no se presupone ninguna extensión de pago.</p>
+  <p class="small muted" style="margin-top:16px">Fuentes: <a href="https://www.espocrm.com/download/">licencia y alojamiento</a> · <a href="https://www.espocrm.com/features/">leads, tareas, exportación y extensiones</a>.</p>
+  <div class="footer"><span>Sistemas de gestión empresarial · DAM 2</span><span>05</span></div>
+</section>
+
+<section class="slide">
+  <div class="top"><span>Academia Erasmus+ · EspoCRM</span><span>06 / plan</span></div>
+  <h1>Orden de despliegue</h1>
+  <p class="sub">MariaDB + EspoCRM + Adminer; versiones fijadas en compose.yaml.</p>
+  <div class="timeline" style="margin-top:20px">
+    <div class="step"><strong>1</strong><span>Preparar <code>.env</code> y volúmenes</span><span>Contraseñas locales y datos persistentes antes del arranque.</span></div>
+    <div class="step"><strong>2</strong><span>Iniciar MariaDB</span><span>EspoCRM necesita que la base acepte conexiones.</span></div>
+    <div class="step"><strong>3</strong><span>Iniciar EspoCRM y Adminer</span><span>Acceso web y revisión de las tablas creadas.</span></div>
+    <div class="step"><strong>4</strong><span>Crear y comprobar datos</span><span>Tres leads, una tarea y reinicio para probar persistencia.</span></div>
+  </div>
+  <p class="small muted" style="margin-top:24px">Imagen pública y ejemplo de Compose: <a href="https://hub.docker.com/_/espocrm">Docker Hub · EspoCRM</a>. Elección comunicada al profesor antes del despliegue.</p>
+  <div class="footer"><span>Sistemas de gestión empresarial · DAM 2</span><span>06</span></div>
+</section>
+
+<section class="slide">
+  <div class="top"><span>Academia Erasmus+ · EspoCRM</span><span>07 / puesta en marcha</span></div>
+  <h1>Evidencias de funcionamiento</h1>
+  <p class="sub">Capturas reales de la pila local, con datos ficticios.</p>
+  <div class="shots">
+    <figure><img src="capturas/01-acceso-recorte.png" alt="Pantalla de acceso a EspoCRM"><figcaption>01 · Acceso a EspoCRM</figcaption></figure>
+    <figure><img src="capturas/03-lead-recorte.png" alt="Ficha de Ana Prueba en EspoCRM"><figcaption>02 · Consulta web de Ana Prueba</figcaption></figure>
+    <figure><img src="capturas/04-adminer-recorte.png" alt="Base de datos EspoCRM en Adminer"><figcaption>03 · Tablas creadas en MariaDB</figcaption></figure>
+  </div>
+  <div class="grid2">
+    <div class="card"><h3>Comprobado</h3><p>Tres consultas, una tarea y 141 tablas. Tras reiniciar, los registros seguían disponibles.</p></div>
+    <div class="card"><h3>Incidencia y solución</h3><p>La descarga inicial agotó el tiempo de espera. Repetimos <code>docker compose up -d</code> y arrancó.</p></div>
+  </div>
+  <div class="footer"><span>Sistemas de gestión empresarial · DAM 2</span><span>07</span></div>
+</section>
+
+<section class="slide">
+  <div class="top"><span>Academia Erasmus+ · EspoCRM</span><span>08 / conclusiones</span></div>
+  <h1>Respuesta a cada objetivo</h1>
+  <div class="conclusions" style="margin-top:24px">
+    <div class="card"><p><strong>01 · Registrar: probado.</strong> Tres consultas ficticias: web, teléfono e Instagram. La última queda como «Otro» y lleva el canal en la descripción.</p></div>
+    <div class="card"><p><strong>02 · Seguir: probado.</strong> Ana Prueba tiene una tarea de llamada a 14 días. El seguimiento se hace manualmente.</p></div>
+    <div class="card"><p><strong>03 · Medir: parcial.</strong> Se cuentan 3 consultas y 0 matrículas de prueba (0 %). Un informe por periodo requiere exportar y calcular fuera del CRM.</p></div>
+  </div>
+  <p class="callout" style="margin-top:19px"><strong>Balance:</strong> la pila funciona y guarda los datos tras reiniciar; quedan por adaptar el canal Instagram y el informe de conversión.</p>
+  <p class="ai">Uso de IA: se utilizó IA para el diseño y la estructura de las diapositivas. Se ajustó la propuesta al escenario de la academia y a las fuentes citadas.</p>
+  <div class="footer"><span>Sistemas de gestión empresarial · DAM 2</span><span>08</span></div>
+</section>
+</body>
+</html>
